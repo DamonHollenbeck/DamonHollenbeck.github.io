@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Yahtzee,</title>
+    <meta name="description" content="Yahtzee game">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+  <body>
+    <h1>Yahtzee,</h1>
+    <div>
+      <h4 id="welcome"> Welcome, please enter your name:</h4>
+      <input name="name" type="text" id="validName"/>
+      <div><button id="save" type="button">Save</button>
+        <button id="load" type="button">Load</button>
+      <button id="newGame" type="button">New Game</button></div>
+    </div>
+    <div>
+      <p class="invisible" id="error">Error! Value entered is not Valid</p>
+    </div>
+    <div class="dice">
+      <table>
+          <tr>
+            <td class="notClicked" id="die_0"><img src="images/asheet.png" height="60" width="50"></td>
+            <td class="notClicked" id="die_1"><img src="images/asheet.png" height="60" width="50"></td>
+            <td class="notClicked" id="die_2"><img src="images/asheet.png" height="60" width="50"></td>
+            <td class="notClicked" id="die_3"><img src="images/asheet.png" height="60" width="50"></td>
+            <td class="notClicked" id="die_4"><img src="images/asheet.png" height="60" width="50"></td>
+          </tr>
+          <tr>
+            <td colspan="2"><button id="RollButton" type="button">Roll the Dice!</button></td>
+          </tr>
+      </table>
+    </div>
+  <div class="Scorecard">
+      <table>
+        <caption>Scorecard</caption>
+          <thead>
+          <tr>
+              <th>Upper Section</th>
+              <th>How to Score</th>
+              <th>Game</th>
+          </tr>
+        </thead>
+      <div class="UpperSection">
+        <tbody>
+           <tr class="AcesCategory" id="1_category">
+             <td>Aces<img src="images/one.svg" height="20" width="20"></td>
+             <td>Count and Add Only Aces</td>
+             <td id="category_1">
+               <input name="name" type="text" id="1"/>
+             </td>
+           </tr>
+           <tr class="TwosCategory" id="2_category">
+             <td>Twos<img src="images/two.svg" height="20" width="20"></td>
+             <td>Count and Add Only Twos</td>
+             <td id="category_2">
+               <input name="name" type="text" id="2"/>
+             </td>
+           </tr>
+           <tr class="ThreesCategory" id="3_category">
+             <td>Threes<img src="images/three.svg" height="20" width="20"></td>
+             <td>Count and Add Only Threes</td>
+             <td id="category_3">
+               <input name="name" type="text" id="3"/>
+             </td>
+           </tr>
+           <tr class="FoursCategory" id="4_category">
+             <td>Fours<img src="images/four.svg" height="20" width="20"></td>
+             <td>Count and Add Only Fours</td>
+             <td id="category_4">
+               <input name="name" type="text" id="4"/>
+             </td>
+           </tr>
+           <tr class="FivesCategory" id="5_category">
+             <td>Fives<img src="images/five.svg" height="20" width="20"></td>
+             <td>Count and Add Only Fives</td>
+             <td id="category_5">
+               <input name="name" type="text" id="5"/>
+             </td>
+           </tr>
+           <tr class="SixesCategory" id="6_category">
+             <td>Sixes<img src="images/six.svg" height="20" width="20"></td>
+             <td>Count and Add Only Sixes</td>
+             <td  id="category_6">
+               <input name="name" type="text" id="6"/>
+             </td>
+           </tr>
+         </div>
+         <div class="TopTotal">
+        <tbody>
+          <tr>
+            <td>Total Score</td>
+            <td><img src="images/download.png" height="40" width="60"></td>
+            <td id="totalU1">x</td>
+          </tr>
+          <tr>
+            <td>Bonus (if total score is 63+)</td>
+            <td></td>
+            <td id= "bonus">x</td>
+          </tr>
+          <tr>
+            <td>Total (of Upper Section)</td>
+            <td><img src="images/download.png" height="40" width="60"></td>
+            <td id="totalU2">x</td>
+          </tr>
+        </tbody>
+    </div>
+    <div class="LowerSection">
+          <thead>
+          <tr>
+              <th>Lower Section</th>
+              <th>How to Score</th>
+              <th>Game</th>
+          </tr>
+        </thead>
+        <tbody>
+           <tr id="catThree">
+             <td>3 of a kind</td>
+             <td>Add Total of All Dice</td>
+             <td id="threekind"><input name="name" type="text" id="3ofaKind"/></td>
+           </tr>
+           <tr id="catFour">
+             <td>4 of a kind</td>
+             <td>Add Total of All Dice</td>
+             <td id="fourkind"><input name="name" type="text" id="4ofaKind"/></td>
+           </tr>
+           <tr id="catFull">
+             <td>Full House</td>
+             <td>Score 25</td>
+             <td id="fullH"><input name="name" type="text" id="FullHouse"/></td>
+           </tr>
+           <tr id="catSmall">
+             <td>Sm. Straight</td>
+             <td>Score 30</td>
+             <td id="smStraight"><input name="name" type="text" id="small"/></td>
+           </tr>
+           <tr id= "catLarge">
+             <td>Lg. Straight</td>
+             <td>Score 40</td>
+             <td id="lgStraight"><input name="name" type="text" id="large"/></td>
+           </tr>
+           <tr id = "catY">
+             <td>Yahtzee</td>
+             <td>Score 50</td>
+             <td id= "y"><input name="name" type="text" id="yahtzee"/></td>
+           </tr>
+           <tr id="catChance">
+             <td>Chance</td>
+             <td>Score Total of All 5 Dice</td>
+             <td id="chanceSpot"><input name="name" type="text" id="chance"/></td>
+           </tr>
+           <tr id="catYB">
+             <td>Yahtzee Bonus</td>
+             <td>Score 100 for Each Bonus</td>
+             <td id="YB"><input name="name" type="text" id="yBonus"/></td>
+           </tr>
+         </div>
+         <div class="LowerTotal">
+           <tbody>
+             <tr>
+               <td>Total (of Lower Section)</td>
+               <td><img src="images/download.png" height="40" width="60"></td>
+               <td id= "totalL">x</td>
+             </tr>
+             <tr>
+               <td>Total (of Upper Section)</td>
+               <td><img src="images/download.png" height="40" width="60"></td>
+               <td id= "totalU3">x</td>
+             </tr>
+             <tr>
+               <td>Grand Total</td>
+               <td><img src="images/download.png" height="40" width="60"></td>
+               <td id= "grandTotal">x</td>
+             </tr>
+           </tbody>
+       </table>
+    </div>
+  </body>
+  <script src="scripts.js" type"text/javascript"></script>
+</html>
